@@ -30,6 +30,8 @@ namespace Advent2018.Day3
         public int SizeX { get; set; }
         public int SizeY { get; set; }
 
+        public bool IsOverlapping { get; set; }
+
         public IEnumerable<Point> GetAllPoints()
         {
             for (var i = 0; i < this.SizeX; i++)

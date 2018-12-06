@@ -50,5 +50,26 @@ namespace Advent2018.Tests.Day3
 
             Assert.Equal(110195, count);
         }
+
+        [Fact]
+        public void FabricIntersection_Small_GetNonOverlappedId()
+        {
+            var fabricsIntersection = new FabricIntersection();
+
+            var id = fabricsIntersection.FindNonOverlapped(Day3Consts.Input1PathSmall).FirstOrDefault().Id;
+
+            Assert.Equal(3, id);
+        }
+
+        [Fact]
+        public void FabricIntersection_Final_GetNonOverlappedId()
+        {
+            var fabricsIntersection = new FabricIntersection();
+
+            var nonOverlapped = fabricsIntersection.FindNonOverlapped(Day3Consts.Input1Path);
+
+            Assert.Single(nonOverlapped);
+            Assert.Equal(894, nonOverlapped.First().Id);
+        }
     }
 }
