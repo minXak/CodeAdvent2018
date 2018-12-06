@@ -1,8 +1,9 @@
 ﻿using System.Linq;
+using Advent2018.Shared;
 
-namespace Advent2018._1
+namespace Advent2018.Day1
 {
-    public class Day1
+    public class FrequencyCalculator
     {
         public int CalculateFrequency(string fileInput)
         {

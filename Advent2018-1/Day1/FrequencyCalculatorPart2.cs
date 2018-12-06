@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using Advent2018.Shared;
 
-namespace Advent2018._1
+namespace Advent2018.Day1
 {
-    public class Day1Part2
+    public class FrequencyCalculatorPart2
     {
         private const int MaxDepth = 10000;
         private readonly HashSet<int> _foundFrequencies;
         private List<int> _data;
 
-        public Day1Part2()
+        public FrequencyCalculatorPart2()
         {
             _foundFrequencies = new HashSet<int> { 0 };
             _data = new List<int>();
