@@ -36,7 +36,7 @@ namespace Advent2018.Tests.Day3
         {
             var fabricsIntersection = new FabricIntersection();
 
-            var count = fabricsIntersection.GetIntersectionsCount(Day3Consts.Input1PathSmall);
+            var count = fabricsIntersection.GetIntersectionsCount(Day4Consts.Input1PathSmall);
 
             Assert.Equal(4, count);
         }
@@ -46,7 +46,7 @@ namespace Advent2018.Tests.Day3
         {
             var fabricsIntersection = new FabricIntersection();
 
-            var count = fabricsIntersection.GetIntersectionsCount(Day3Consts.Input1Path);
+            var count = fabricsIntersection.GetIntersectionsCount(Day4Consts.Input1Path);
 
             Assert.Equal(110195, count);
         }
@@ -56,7 +56,7 @@ namespace Advent2018.Tests.Day3
         {
             var fabricsIntersection = new FabricIntersection();
 
-            var id = fabricsIntersection.FindNonOverlapped(Day3Consts.Input1PathSmall).FirstOrDefault().Id;
+            var id = fabricsIntersection.FindNonOverlapped(Day4Consts.Input1PathSmall).FirstOrDefault().Id;
 
             Assert.Equal(3, id);
         }
@@ -66,7 +66,7 @@ namespace Advent2018.Tests.Day3
         {
             var fabricsIntersection = new FabricIntersection();
 
-            var nonOverlapped = fabricsIntersection.FindNonOverlapped(Day3Consts.Input1Path);
+            var nonOverlapped = fabricsIntersection.FindNonOverlapped(Day4Consts.Input1Path);
 
             Assert.Single(nonOverlapped);
             Assert.Equal(894, nonOverlapped.First().Id);
