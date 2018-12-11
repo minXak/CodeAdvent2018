@@ -18,6 +18,26 @@ namespace Advent2018.Day4
             return GetHash(tuple);
         }
 
+        public int GetBestGuardHashOfAll(string filePath)
+        {
+            var items = InitTimeRecordsOrdered(filePath);
+
+            UpdateGuardIds(items);
+
+            var tuple = this.GetBestGuardOfAll(items);
+
+            return GetHash(tuple);
+        }
+
+        private Tuple<int, int> GetBestGuardOfAll(List<TimeRecord> items)
+        {
+            var guardsStats = GetGuardStats(items);
+            var value = guardsStats.Max(s => s.Value.MinutesAsleepCounter.Max(ss => ss.Value));
+            var guardStat = guardsStats.FirstOrDefault(s => s.Value.MinutesAsleepCounter.Any(ss => ss.Value == value));
+            var minute = guardStat.Value.MinutesAsleepCounter.FirstOrDefault(s => s.Value == value);
+            return new Tuple<int, int>(guardStat.Key, minute.Key);
+        }
+
         private static int GetHash(Tuple<int, int> tuple)
         {
             return tuple.Item1 * tuple.Item2;

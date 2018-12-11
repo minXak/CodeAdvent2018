@@ -38,5 +38,25 @@ namespace Advent2018.Tests.Day4
 
             Assert.Equal(115167, result);
         }
+
+        [Fact]
+        public void GuardProblemOfAll_Small_FindHash()
+        {
+            var guardProblem = new GuardProblem();
+
+            var result = guardProblem.GetBestGuardHashOfAll(Day4Consts.Input1PathSmall);
+
+            Assert.Equal(4455, result);
+        }
+
+        [Fact]
+        public void GuardProblemOfAll_Final_FindHash()
+        {
+            var guardProblem = new GuardProblem();
+
+            var result = guardProblem.GetBestGuardHashOfAll(Day4Consts.Input1Path);
+
+            Assert.Equal(32070, result);
+        }
     }
 }
