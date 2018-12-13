@@ -24,7 +24,7 @@ namespace Advent2018.Tests.Day4
         {
             var guardProblem = new GuardProblem();
 
-            var result = guardProblem.GetBestGuardHash(Day4Consts.Input1PathSmall);
+            var result = guardProblem.GetBestGuardHash(Day5Consts.Input1PathSmall);
             
             Assert.Equal(240, result);
         }
@@ -34,7 +34,7 @@ namespace Advent2018.Tests.Day4
         {
             var guardProblem = new GuardProblem();
 
-            var result = guardProblem.GetBestGuardHash(Day4Consts.Input1Path);
+            var result = guardProblem.GetBestGuardHash(Day5Consts.Input1Path);
 
             Assert.Equal(115167, result);
         }
@@ -44,7 +44,7 @@ namespace Advent2018.Tests.Day4
         {
             var guardProblem = new GuardProblem();
 
-            var result = guardProblem.GetBestGuardHashOfAll(Day4Consts.Input1PathSmall);
+            var result = guardProblem.GetBestGuardHashOfAll(Day5Consts.Input1PathSmall);
 
             Assert.Equal(4455, result);
         }
@@ -54,7 +54,7 @@ namespace Advent2018.Tests.Day4
         {
             var guardProblem = new GuardProblem();
 
-            var result = guardProblem.GetBestGuardHashOfAll(Day4Consts.Input1Path);
+            var result = guardProblem.GetBestGuardHashOfAll(Day5Consts.Input1Path);
 
             Assert.Equal(32070, result);
         }

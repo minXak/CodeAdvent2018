@@ -26,5 +26,11 @@ namespace Advent2018.Shared
 
             return new List<string>(lines);
         }
+
+        public string GetDataPlain(string filePath)
+        {
+            var result = File.ReadAllText(filePath);        
+            return result;
+        }
     }
 }
