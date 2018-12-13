@@ -6,4 +6,8 @@
     <RootNamespace>Advent2018</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Day6\" />
+  </ItemGroup>
+
 </Project>
