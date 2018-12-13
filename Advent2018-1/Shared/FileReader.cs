@@ -30,7 +30,7 @@ namespace Advent2018.Shared
         public string GetDataPlain(string filePath)
         {
             var result = File.ReadAllText(filePath);        
-            return result;
+            return result.Trim();
         }
     }
 }

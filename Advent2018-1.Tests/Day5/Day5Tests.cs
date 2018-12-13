@@ -30,5 +30,26 @@ namespace Advent2018.Tests.Day5
 
             Assert.Equal(9562, result);
         }
+
+        [Theory]
+        [InlineData("dabAcCaCBAcCcaDA", 4)]
+        public void PolymerProblem_StringInput_WithUpdatedPolymer(string input, int length)
+        {
+            var polymerProblem = new PolymerProblem();
+
+            var result = polymerProblem.UpdatePolymerBase(input);
+
+            Assert.Equal(length, result);
+        }
+
+        [Fact]
+        public void PolymerProblem_WithUpdatedPolymer_Final_FileInput()
+        {
+            var polymerProblem = new PolymerProblem();
+
+            var result = polymerProblem.UpdatePolymer(Day5Consts.Input1Path);
+
+            Assert.Equal(4934, result);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Runtime.Serialization.Formatters;
+using System.Text;
 using Advent2018.Shared;
 
 namespace Advent2018.Day5
@@ -13,6 +14,35 @@ namespace Advent2018.Day5
             return GetUnitCountBase(input);
         }
 
+        public int UpdatePolymer(string filePath)
+        {
+            var fileParser = new FileReader();
+            var input = fileParser.GetDataPlain(filePath);
+
+            return UpdatePolymerBase(input);
+        }
+
+        public int UpdatePolymerBase(string input)
+        {
+            var smallestNumber = int.MaxValue;
+            for (var i = 0; i < 26; i++)
+            {
+                char symbol = (char)(i + 65);
+                char lowerSymbol = char.ToLower(symbol);
+                var clearedString = input.Replace(char.ToString(symbol), "");
+                clearedString = clearedString.Replace(char.ToString(lowerSymbol), "");
+                var stringBuilder = new StringBuilder(clearedString);
+                var unitCount = GetUnitCountBase(stringBuilder.ToString());
+
+                if (smallestNumber > unitCount)
+                {
+                    smallestNumber = unitCount;
+                }
+            }
+
+            return smallestNumber;
+        }
+
         public int GetUnitCountBase(string input)
         {
             var stringBuilder = new StringBuilder(input);
@@ -24,7 +54,7 @@ namespace Advent2018.Day5
                 }
             }
 
-            return stringBuilder.ToString().Trim().Length;
+            return stringBuilder.ToString().Length;
         }
 
         private static int ModifyInput(StringBuilder stringBuilder, int i)
